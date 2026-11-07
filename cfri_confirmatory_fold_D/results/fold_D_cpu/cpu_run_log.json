@@ -1,0 +1,289 @@
+{
+ "code": "cfri-core-v2",
+ "code_sha256": "c8ea4397f864fe8db9133c47e0983c7280df5522d73f5ef08824f166b5f7cf95",
+ "workers": 12,
+ "shards": 68,
+ "complete": true,
+ "status": {
+  "EDEN_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWK_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWO_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EIRL_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EFNL_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWC_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWQ_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWZ_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "ECH_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWI_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWG_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWW_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "ENOR_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWN_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWD_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EPOL_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWL_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWP_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWU_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWH_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWA_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "INDA_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "MCHI_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EIDO_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWC_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWZ_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWJ_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "ENZL_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWM_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWY_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EPHE_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWS_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWT_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "THD_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EIS_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "EZA_feature": {
+   "state": "done",
+   "errors": 0
+  },
+  "ECH_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWW_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWO_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWK_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EDEN_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EFNL_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWQ_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWG_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EIRL_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWI_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWN_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "ENOR_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EPOL_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWP_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWD_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWL_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWA_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWU_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "MCHI_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWH_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "INDA_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWJ_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EIDO_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWM_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "THD_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWS_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "ENZL_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EZA_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWT_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EPHE_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EWY_row": {
+   "state": "done",
+   "errors": 0
+  },
+  "EIS_row": {
+   "state": "done",
+   "errors": 0
+  }
+ },
+ "environment": {
+  "python": "3.13.16",
+  "numpy": "2.1.3",
+  "pandas": "2.2.3",
+  "scipy": "1.18.1",
+  "scikit-learn": "1.6.1",
+  "cpu_count": 12
+ }
+}

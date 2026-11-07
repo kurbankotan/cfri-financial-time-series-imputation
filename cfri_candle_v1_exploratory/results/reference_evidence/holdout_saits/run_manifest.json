@@ -1,0 +1,189 @@
+{
+ "code_sha256": {
+  "cfri_core.py": "ef33fa6f0fdcb8a79b0f364f9ff00b7820a707e8323f6f03bac554de5d657721",
+  "confirm_saits.py": "86b592b9d380cc0fd694d35f8031f8dac16a130a5bfed022c56b180ca27f07a4",
+  "holdout_data.py": "a6eb43994bab4a0f026d3e90e8be6d1d2b71e7d3a7197fb975b1f9c88cf071d6",
+  "holdout_saits.py": "e08542beb465073d9cf3301e8fcecb08da893bf1b5037674d1b938209c396597",
+  "upstream/cfri_core.py": "ef33fa6f0fdcb8a79b0f364f9ff00b7820a707e8323f6f03bac554de5d657721",
+  "v2_peer.py": "826c1dd7bb4fcf0d081daaf6169f91d26ad674dfbbb910124e6e85c629875c66",
+  "v2_price.py": "19b98bdfa83a9dcc36412f0e8539101741a8a47994a63e85c3e9ea33ad44016e"
+ },
+ "config": {
+  "blocks": [
+   1,
+   2,
+   3,
+   5,
+   10,
+   20
+  ],
+  "peer_alpha": 10.0,
+  "peer_gains": [
+   0.0,
+   0.25,
+   0.5,
+   0.75,
+   1.0
+  ],
+  "peer_min_peers": 5,
+  "projection": "joint_ohlc_project(weights=None)",
+  "rates": [
+   0.1,
+   0.2,
+   0.3
+  ],
+  "saits": {
+   "d_ffn": 128,
+   "d_k": 16,
+   "d_model": 64,
+   "d_v": 16,
+   "dropout": 0.1,
+   "n_heads": 4,
+   "n_layers": 2
+  },
+  "seeds": [
+   11,
+   23,
+   37
+  ],
+  "variant": {
+   "epochs": 200,
+   "patience": 20
+  },
+  "windows": [
+   64,
+   16,
+   32
+  ]
+ },
+ "created_utc": "2026-10-29T04:28:35.473105+00:00",
+ "data_receipt_sha256": "d2029534d52aac7ea4e4681ce90c9921d8970c41bb4ed8f33a394c632e6bc769",
+ "environment": {
+  "device": "cuda",
+  "numpy": "2.1.3",
+  "pandas": "2.2.3",
+  "pypots": "1.5",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130"
+ },
+ "fold": "H1",
+ "methods_by_mask": {
+  "feature": [
+   "saits_joint"
+  ],
+  "row": [
+   "saits_joint",
+   "saits_peer_joint"
+  ]
+ },
+ "peer_frame_sha256": {
+  "ECH": "d0aad35cb44fd4d8cb959e8dcb32a22ced10db6852708a3feaa0657225fa63ea",
+  "EDEN": "8946800873bb1531fdab0b1857404a710c397644f68c9cc86ab8ceca3c2c3a18",
+  "EFNL": "5b56935ce4a01d99f7d6f67990676c42bb918a8eb2e5995ed5a4238ecb192835",
+  "EIDO": "f62e7cac0f9ce831478cd988a9177b012760376784852a08f67bb73b54b38fd4",
+  "EIRL": "d74485dbeacee1558e1097853739e9f85d64d146b3d8e1fa8c9ab222e1320a39",
+  "EIS": "32badcdcba112fa61bf79a066f3e5c768f70171d684a103ad4c6b607430062e4",
+  "ENOR": "ba241372e2b626fb48d31432cbae8c15229bbf49828f51adb3adf12be2875bea",
+  "ENZL": "93fb803169b3b0317ea8fcfab9899ebfc6541e0018e7a33d9e8443dcc73ed347",
+  "EPHE": "4a5bbac342f0807106cdf4964746d9156e5ae9d06cc4ffd01d9b605848f85567",
+  "EPOL": "cc71df896fa027b45d80fa0dbefe2b6348d47a3369ee0ee63bed783d14c7656d",
+  "EWA": "c071e49ce93982b05e527be4a4d4384d80482081ccdb8d614ff1fe580cb4e821",
+  "EWC": "36ad9c4e6f2065aaf480014b65d76942568201f022553f909c83cf0739bab1b5",
+  "EWD": "a4f8cca61a6070c8150f62089f255859a38e6a748bc5ba63bf0255cfa47b05cd",
+  "EWG": "074c16ab9736ab8493d66198b448da2c16d65380dd5d9f7b209461a66e0c8f69",
+  "EWH": "6d420f08e4732275f74b31f2f738b38afa56a4795d5a6741f0c3bc26c294e802",
+  "EWI": "5b00eff217238d06fdc25c9c870aa8c557867f0a2bb418a9ba446b310f0d41f1",
+  "EWJ": "f49de2a419d0f6402959297b7277e8024f116b20449849d1b0171541c71b49b6",
+  "EWK": "aa1ae422abaadb71665abb0eb96fa7cb78dc74d70ef465b26498f65e4cf7c7d6",
+  "EWL": "193bf9e11be7fe3438bed4b1faeef82722a1053478af5e91a73896ef3ee3ee70",
+  "EWM": "794712dbd288d8f0794cacced6c7e6e1c634512d4df7f672fcfb16ad5415c25d",
+  "EWN": "995f449a2738b953e4676e9487de7a7e99f8c5f7733f06e599f8c62b76303028",
+  "EWO": "c7e36fb35092ff7a7474129f90c56f1328faf32db1fc7105c3a483652821ea54",
+  "EWP": "839ff159c3789714df4f53220588ff4be6c4e898e3d4f850591fff2779064c60",
+  "EWQ": "a75532cda64e2506087ae853ea86f01eb2d1d2faca43941881f98255cc93bf48",
+  "EWS": "e885b11c6aabad671271ee76c2840fa13e96023e51c9741cbc7f59ad8002f403",
+  "EWT": "50bd9bf97be305e45e1696a8019bd5259cdbb1e60c428aee52ba80ac2bb22eeb",
+  "EWU": "7cb74ac6b79fab733a5b1f0187d8f50e78c9c8b191b9ce066d76cb6066fd5a41",
+  "EWW": "2afcc3159dd542fad679325220fa64f2ac5125db4f50a3d53da3e2c0fa59b103",
+  "EWY": "e3bc4b45df60ea8d3cd20d4fdd431357bd71ee668a0c5fafd68a3004108062d8",
+  "EWZ": "a09a2851ad1b748b9953b33a7473681d32c3b74e58f6db367347fd0efcdb0c88",
+  "EZA": "f7f739e96073e078c1b746a47bdd9703705091363b9f6ca1ec7e5c5a6bcdf750",
+  "INDA": "bf6f3e30586b161986c0fee8902c2569abd8a72794ca12b519aeaab38e4799c0",
+  "MCHI": "6994b0329527fe0270dd9ac045dd11369a90fbae84467264530e5c7d5bb65891",
+  "THD": "61de9db7f35b2a814957c3167cae26a7902f74b17cb65c7af966b0f4be036e04"
+ },
+ "peer_tickers": [
+  "EWC",
+  "EWZ",
+  "ECH",
+  "EWW",
+  "EWO",
+  "EWK",
+  "EDEN",
+  "EFNL",
+  "EWQ",
+  "EWG",
+  "EIRL",
+  "EWI",
+  "EWN",
+  "ENOR",
+  "EPOL",
+  "EWP",
+  "EWD",
+  "EWL",
+  "EWU",
+  "EWA",
+  "MCHI",
+  "EWH",
+  "INDA",
+  "EIDO",
+  "EWJ",
+  "EWM",
+  "ENZL",
+  "EPHE",
+  "EWS",
+  "EWY",
+  "EWT",
+  "THD",
+  "EIS",
+  "EZA"
+ ],
+ "study": "cfri-heldout-assets-v1",
+ "target_frame_sha256": {
+  "EEM": "cf86bf8de584908b593f2feb8fa62106d9fa9833aba392d9f182ae5bc25c8cce",
+  "EFA": "8b20892744eadba81cc6ca87bd07fb3721938c85bac8b48a816daf3ab0e012a3",
+  "IBB": "b6448a93fa161dbe5a11d896203fc47f7d63eba88fa92ed18ab5e34eb55c029a",
+  "IWM": "fc5261ac80dc8b57c6f951cbc414dbd486fc1317bb76051d3f32e840751f7901",
+  "IYR": "e92a9d243da07691b969176ee0c3cbd7d3cc80705ffee4146f3b7c7181d9c256",
+  "QQQ": "ae70d1d477f5bee44e156fc932965923304373def188eaaa81ab75d7d5ea0f93",
+  "SPY": "6d7e212b36b60e3fc07023172fed92ed10c4ade3c3938e387fcb14db411bc668",
+  "XLB": "f985dda829d6e79f0abfc3d7959d30778cd080b607f447d410781b358d4b039f",
+  "XLE": "4e9a131b8a103af7f26ccd52e6c49f054c266b76bff0f60c652be1471ab6655c",
+  "XLF": "4f78adc2f95d7346d5b6085eb73c301a48fc3aeac8d68e5196efb5bf04c24ae8",
+  "XLI": "5dbe60b2046e7d868fc641eda3e6fbd10f1bd2e86ae7ff9da7f1078b1725644e",
+  "XLK": "a8170097e8739c2b89a231561e341b6479ddf7d2bfd97c75f418d9eb142c4216",
+  "XLP": "ef3817d93c86c14637391944663bed1e40611b23d54900d10c2a21a8aee60749",
+  "XLU": "490e2e6066f1a073eb4a38930f44dd1133def0a45ffbb2adcddc352a2702c365",
+  "XLV": "b522feb25b2071157e42eaa1453ac6189ecfcd6c70608075a4516f7e14843862",
+  "XLY": "0e9de7de1ce92da096cd23941430011d0c7053249c705b07ed18da0a21f6d1e0"
+ },
+ "target_tickers": [
+  "XLB",
+  "XLE",
+  "XLF",
+  "XLI",
+  "XLK",
+  "XLP",
+  "XLU",
+  "XLV",
+  "XLY",
+  "SPY",
+  "QQQ",
+  "IWM",
+  "EFA",
+  "EEM",
+  "IBB",
+  "IYR"
+ ],
+ "test_end": "2026-09-30"
+}

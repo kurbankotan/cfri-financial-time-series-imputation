@@ -1,0 +1,126 @@
+{
+  "classification": "exploratory replay after seeing 2026 held-out outcomes",
+  "condition_count": 816,
+  "generated_utc": "2026-11-07T03:28:08.131220+00:00",
+  "method_macro_nrmse": {
+    "candle_direct": {
+      "method": "candle_direct",
+      "nrmse": 0.13627996839532136,
+      "price_nrmse": 0.04767579437500713,
+      "volume_nrmse": 0.49069666447657834
+    },
+    "candle_half": {
+      "method": "candle_half",
+      "nrmse": 0.13597343215220162,
+      "price_nrmse": 0.047292624071107445,
+      "volume_nrmse": 0.49069666447657834
+    },
+    "cfri_joint": {
+      "method": "cfri_joint",
+      "nrmse": 0.13886694584133769,
+      "price_nrmse": 0.050909516182527495,
+      "volume_nrmse": 0.49069666447657834
+    },
+    "saits_joint": {
+      "method": "saits_joint",
+      "nrmse": 0.13989981286377987,
+      "price_nrmse": 0.04683751927575719,
+      "volume_nrmse": 0.5121489872158705
+    }
+  },
+  "methods": [
+    "cfri_joint",
+    "candle_direct",
+    "candle_half",
+    "saits_joint"
+  ],
+  "model_fit_count": 816,
+  "paired": {
+    "candle_direct": {
+      "cfri_joint": {
+        "nrmse": {
+          "asset_count": 16,
+          "asset_ties": 0,
+          "asset_wins": 16,
+          "mean_difference": -0.0025869774460163253
+        },
+        "price_nrmse": {
+          "asset_count": 16,
+          "asset_ties": 0,
+          "asset_wins": 16,
+          "mean_difference": -0.003233721807520365
+        },
+        "volume_nrmse": {
+          "asset_count": 16,
+          "asset_ties": 16,
+          "asset_wins": 0,
+          "mean_difference": 0.0
+        }
+      },
+      "saits_joint": {
+        "nrmse": {
+          "asset_count": 16,
+          "asset_ties": 0,
+          "asset_wins": 11,
+          "mean_difference": -0.003619844468458505
+        },
+        "price_nrmse": {
+          "asset_count": 16,
+          "asset_ties": 0,
+          "asset_wins": 6,
+          "mean_difference": 0.000838275099249941
+        },
+        "volume_nrmse": {
+          "asset_count": 16,
+          "asset_ties": 0,
+          "asset_wins": 12,
+          "mean_difference": -0.021452322739292207
+        }
+      }
+    },
+    "candle_half": {
+      "cfri_joint": {
+        "nrmse": {
+          "asset_count": 16,
+          "asset_ties": 0,
+          "asset_wins": 16,
+          "mean_difference": -0.002893513689136068
+        },
+        "price_nrmse": {
+          "asset_count": 16,
+          "asset_ties": 0,
+          "asset_wins": 16,
+          "mean_difference": -0.0036168921114200503
+        },
+        "volume_nrmse": {
+          "asset_count": 16,
+          "asset_ties": 16,
+          "asset_wins": 0,
+          "mean_difference": 0.0
+        }
+      },
+      "saits_joint": {
+        "nrmse": {
+          "asset_count": 16,
+          "asset_ties": 0,
+          "asset_wins": 11,
+          "mean_difference": -0.003926380711578248
+        },
+        "price_nrmse": {
+          "asset_count": 16,
+          "asset_ties": 0,
+          "asset_wins": 8,
+          "mean_difference": 0.0004551047953502557
+        },
+        "volume_nrmse": {
+          "asset_count": 16,
+          "asset_ties": 0,
+          "asset_wins": 12,
+          "mean_difference": -0.021452322739292207
+        }
+      }
+    }
+  },
+  "study": "cfri-candle-v1-exploratory",
+  "target_count": 16
+}

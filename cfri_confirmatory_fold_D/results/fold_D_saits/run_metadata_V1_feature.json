@@ -1,0 +1,31 @@
+{
+  "variant": "V1",
+  "mask_type": "feature",
+  "config": {
+    "epochs": 30,
+    "patience": 5
+  },
+  "saits": {
+    "n_layers": 2,
+    "d_model": 64,
+    "n_heads": 4,
+    "d_k": 16,
+    "d_v": 16,
+    "d_ffn": 128,
+    "dropout": 0.1
+  },
+  "fingerprint": "f8343e457300ee43a4effea22d5964354b76b352900791456809de12335a6295",
+  "sessions": [
+    {
+      "started_utc": "2026-10-27T07:13:28.735622+00:00",
+      "python": "3.13.16",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "torch": "2.11.0+cu130",
+      "pypots": "1.5",
+      "device": "cuda",
+      "gpu": "NVIDIA A100-SXM4-40GB",
+      "cudnn": 92700
+    }
+  ]
+}
