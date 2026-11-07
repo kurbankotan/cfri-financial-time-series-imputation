@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this code or its result files, please cite this repository and the associated article when available."
+title: "Cross-Feature Residual Interpolation (CFRI) for contiguous gaps in financial time series: code, protocols, and results"
+type: software
+authors:
+  - family-names: "Kotan"
+    given-names: "Kurban"
+    orcid: "https://orcid.org/0000-0002-6660-0565"
+    affiliation: "Manisa Celal Bayar University"
+repository-code: "https://github.com/kurbankotan/cfri-financial-time-series-imputation"
+url: "https://github.com/kurbankotan/cfri-financial-time-series-imputation"
+license: MIT
+keywords:
+  - missing data imputation
+  - financial time series
+  - contiguous missing blocks
+  - cross-feature residual interpolation
+  - OHLC consistency
+  - external validation
+abstract: >-
+  Public source, protocols, notebooks, derived results, and verification code
+  for CFRI imputation of missing financial time-series blocks. The repository
+  also preserves the original ITRI development and external-validation studies,
+  a prespecified CFRI fold D test, a locally frozen new-asset holdout, and an
+  exploratory candle-coordinate replay. Raw vendor market tables are excluded.

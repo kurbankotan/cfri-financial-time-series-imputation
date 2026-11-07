@@ -1,68 +1,54 @@
-# CFRI: financial time-series imputation
+# CFRI: Cross-Feature Residual Interpolation
 
-**CFRI** means **Cross-Feature Residual Interpolation**. This repository
-preserves the ITRI baseline, CFRI studies, and an exploratory candle-coordinate
-extension. It accompanies a manuscript revision draft. The methods reconstruct
-historical gaps using observations before and after a missing time point;
-they are offline imputers, not forecasting or trading systems.
+[![Verify results](https://github.com/kurbankotan/cfri-financial-time-series-imputation/actions/workflows/verify-results.yml/badge.svg)](https://github.com/kurbankotan/cfri-financial-time-series-imputation/actions/workflows/verify-results.yml)
+
+This repository accompanies a CFRI-first manuscript revision draft on reconstructing contiguous missing blocks in daily financial time series. CFRI corrects log-linear price interpolation using observed same-day OHLC residuals, applies a volume rule, and enforces the OHLC order. The original Iterative Temporal Regression Imputation (ITRI) experiments and external validation remain here as the development history and comparator evidence. These methods reconstruct historical gaps using both sides of a gap; they are not forecasts or trading systems.
 
 ## Study map
 
-| Directory | What it contains | Status and main result |
+| Study | Directory | Evidence status |
 |---|---|---|
-| `itri_baseline/` | Original BIST 30/S&P 500 ITRI ablation code, Colab notebook, derived results and figures | Historical development baseline; the selected one-day, five-pass setting reached mean test NRMSE 0.198094 on that original study. |
-| `itri_external_validation/classical/` | Public source, frozen protocol and notebook for the external 34-ETF classical comparison | Source archive; separate from the original ITRI mask protocol. |
-| `itri_external_validation/neural/` | Public BRITS/SAITS source and neural protocol | Source archive; the plan was fixed after classical outcomes were seen. |
-| `cfri_confirmatory_fold_D/` | CFRI code and derived scores for 34 ETFs in the 2026 Fold D evaluation | Four prespecified primary comparisons met their decision rules; the projection-equalized SAITS comparison did not (13/34 ETF wins). |
-| `cfri_holdout_v1/` | CFRI code, Colab notebook, protocol and derived scores on 16 previously unused ETFs | Feature-mask H1 versus SAITS did not meet its 12/16 rule (9/16); whole-row H2 and H3 did (16/16 each). |
-| `cfri_candle_v1_exploratory/` | Exact candle replay source, Colab notebook, paired score tables and 816 condition shards | **Exploratory** replay designed after 2026 holdout outcomes were seen; the fixed half blend improves original CFRI on 16/16 ETFs, but SAITS retains the lower OHLC mean. |
+| ITRI development ablation on BIST 30 and S&P 500 | `notebooks/`, `scripts/`, `results/`, `metadata/` | Original development experiment and held-out test. |
+| Matched-mask development comparators | `development_comparators/` | PCHIP, KNN and chained equations on the original data. |
+| External validation on 34 country ETFs | `external_validation/` | Frozen classical and neural protocols, results, and explicitly exploratory follow-up analyses. |
+| CFRI folds A–C and 2026 fold D | `cfri_confirmatory/` | Exploratory earlier folds and a prespecified new-period test; the public GitHub commit occurred **after** data acquisition, as documented in `cfri_confirmatory/DEVIATIONS.md`. |
+| CFRI new-asset holdout on 16 ETFs | `cfri_holdout_v1/` | Locally time-stamped source freeze before acquisition; published after the run. It reuses the 2026 period. |
+| Candle-coordinate CFRI extension | `cfri_candle_v1_exploratory/` | Exploratory matched replay designed after the 2026 holdout results were inspected; feature-wise masks only. |
+| Figure source and rendered figures | `paper_figures/` | Historical file labels are mapped in `NUMBERING_MAP.md`. |
 
-## Read the evidence in order
+The study folders contain the original protocols, notebooks, source, analysis scripts, receipts, and derived scores. The historical ITRI filenames and Drive paths remain intact to preserve their provenance. `PACKAGE_PROVENANCE.md` records the source archives used to assemble this repository.
 
-1. `itri_baseline/` defines the original iterative temporal regression method.
-2. `cfri_confirmatory_fold_D/results/fold_D_report.md` gives the frozen
-   comparison decisions and limitations.
-3. `cfri_holdout_v1/results/holdout_report.md` gives the independent-asset
-   feature-mask and whole-row findings, including the failed H1 comparison.
-4. `cfri_candle_v1_exploratory/results/candle_report.md` reports the later
-   candle experiment. It reuses verified identical 2026 data and masks and is
-   **not** a new confirmatory holdout. Only feature-wise masks were replayed.
+The CFRI-first draft places the method in Sections 3.1–3.4, the ITRI comparator in Section 3.5, the evaluations in Sections 4.1–4.3, and the results in Sections 5.1–5.4. Its main Table 1 reports CFRI fold D and earlier folds; main Table 2 reports the new-asset holdout. Historical ITRI tables and figures remain in this repository, but the draft has no ITRI main tables or main figures. The old-to-current labels are in [`NUMBERING_MAP.md`](NUMBERING_MAP.md).
 
-The candle half blend lowers the equal-ETF all-field mean NRMSE from 0.138867
-for original CFRI to 0.135973. Against SAITS V2 it wins 11/16 ETFs on the
-all-field mean, while SAITS has the lower OHLC-only mean (0.046838 versus
-0.047293). The all-field advantage is inherited from the unchanged CFRI
-volume score; it does not establish better price imputation than SAITS.
+## Results and interpretation
 
-## Reproduce and verify
+- In the 2026 fold D test, CFRI met all four prespecified primary decision rules against log-linear interpolation, original ITRI, CFRI without its residual correction, and normalized SAITS V2. In a secondary comparison that applied the same original heuristic OHLC repair to both methods, CFRI had lower error than SAITS in only 13 of 34 ETFs; no general advantage over equally repaired SAITS was established.
+- In the 16-ETF new-asset holdout, feature-mask H1 against projected SAITS did not meet its 12-of-16 decision rule (9 of 16). The whole-row peer bridge comparisons H2 and H3 met their rules (16 of 16 each). This is a new-asset test in the same 2026 period, not a new-period test.
+- The later candle-coordinate replay used the same 2026 assets and masks. Its fixed half blend reduced equal-ETF all-field NRMSE from 0.138867 for original CFRI to 0.135973 and improved all 16 ETFs relative to CFRI. Against SAITS V2 it won 11 of 16 ETFs on the all-field mean, while SAITS had the lower OHLC-only mean (0.046838 versus 0.047293). The all-field edge comes from the unchanged CFRI volume result. No whole-row candle experiment was run. These candle findings are exploratory.
 
-Each study folder contains its own instructions and dependencies. The original
-ITRI experiment can be checked inside `itri_baseline/` with
-`python scripts/verify_published_results.py` after installing that folder's
-`requirements.txt`. The CFRI held-out and candle folders contain resumable
-Colab notebooks. The candle folder has `verify_package.py` for its source,
-score-shard and SHA integrity checks. `SHA256SUMS.txt` in this root records
-every other public file in this package.
+Read each study's `README.md` and protocol for exact masks, endpoints, settings, and limits.
 
-The original Fold D Colab notebook and frozen Word protocol were unavailable
-in the local source archive used to build this package. Its exact six Python
-source files and derived run outputs are preserved. The recorded protocol ID
-is `CFRI-confirmatory-protocol-v1`; no newly written document is presented as
-the pre-run frozen protocol. The held-out source freeze was local; publishing
-it to GitHub after the run does not create a public pre-run timestamp.
+## Verify the published artifacts
 
-## Data and GitHub upload
+No vendor data are needed for the checks. From the repository root, install the verification dependencies and run:
 
-No raw Yahoo OHLCV tables or private data snapshots are redistributed here.
-Receipts contain their SHA-256 hashes. A fresh download may differ from the
-recorded data snapshot. Create a new repository named
-`cfri-financial-time-series-imputation`, extract this ZIP, and use GitHub
-Desktop or git to commit the **contents** of its same-named folder at the
-repository root. GitHub's browser uploader accepts at most 100 files per
-batch; this package has more than 500, so browser upload would require
-multiple batches. Do not upload the outer folder as a subdirectory, and do
-not add local raw-data caches. The archived notebook and Drive paths retain
-their historical `ITRI` names so their executed source bytes and provenance
-remain intact.
+```bash
+python -m pip install numpy==2.1.3 pandas==2.2.3 scipy==1.16.3
+python scripts/verify_published_results.py
+python development_comparators/verify_comparator_numbers.py
+python external_validation/code/verify_reported_numbers.py
+python cfri_confirmatory/analysis/verify_reported_numbers.py
+python cfri_confirmatory/analysis/fold_D_supplement.py --out /tmp/cfri_fold_D_supplement
+python cfri_holdout_v1/analysis/verify_reported_numbers.py
+python cfri_candle_v1_exploratory/verify_package.py
+```
 
-Repository publication is not a new preregistration of historical runs.
+The GitHub Actions workflow runs these checks on each push. The candle verifier uses only the Python standard library and checks its source hashes, result files, and all 816 condition shards. `SHA256SUMS.txt` records the packaged file bytes. A later data download may differ because the provider can revise historical records.
+
+## Data, citation, and license
+
+Raw Yahoo Finance price and volume tables and private snapshots are excluded. The published files contain derived errors, mask identifiers, settings, diagnostics, and hashes of the input data. The acquisition and freeze receipts are in the relevant study folders. Never add local `raw_do_not_publish`, `raw_cache`, or private snapshot folders to the public repository.
+
+The citation metadata are in [`CITATION.cff`](CITATION.cff). The code is under the [MIT License](LICENSE). See each study folder for its data and result provenance.
+
+**Author:** Kurban Kotan, Manisa Celal Bayar University. [ORCID 0000-0002-6660-0565](https://orcid.org/0000-0002-6660-0565).

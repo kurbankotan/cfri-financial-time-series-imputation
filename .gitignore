@@ -1,10 +1,26 @@
 .DS_Store
-__pycache__/
-*.pyc
 .ipynb_checkpoints/
 .venv/
-raw_cache/
+__pycache__/
+*.py[cod]
+*.log
+reproduction_run/
+itri_window_ablation_results.zip
+
+# raw vendor data are never committed
+private/
+work/
+data/
+*PRIVATE*.zip
+*snapshot*.zip
+
+# manuscript drafts stay outside the public repository
+*.docx
+
+# Local CFRI raw-data caches
 raw_do_not_publish/
-raw_data/
-*_PRIVATE_*.zip
-*private_data_snapshot*.zip
+raw_cache/
+
+# Regenerable reporting outputs
+cfri_confirmatory/analysis/supplement_fold_D/
+cfri_holdout_v1/analysis/supplement_holdout/

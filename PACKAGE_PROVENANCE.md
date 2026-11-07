@@ -1,25 +1,14 @@
 # Package provenance
 
-The following source archives were combined without editing their study code
-or reported result files:
+This CFRI repository package combines two public artifact archives without modifying their study source or result bytes.
 
-| Source artifact | SHA-256 | Material |
+| Input archive | SHA-256 | Role |
 |---|---|---|
-| `CFRI_GitHub_code_v12.zip` | `184783bf8d3ac592282fa2c99b38d573147e958f3f644525ba0d52eb9b6750e2` | Confirmatory Fold D and new-asset holdout directories. |
-| `CFRI_GitHub_candle_v1_exploratory.zip` | `7eeebfd15ef0b9dfce60207e208ba3e117a79e39d24a84b15d94540f4230a2e7` | Exploratory candle directory. |
-| `ITRI_External_Validation_Public_Code_Stage2.zip` | `b656f6cebc7161f6f6530a4a3da05e8a0a5dc31648af784ba6e9ebebe203beab` | Historical classical external-validation source. |
-| `ITRI_BRITS_SAITS_code_package.zip` | `8228c71ce0e98172efab10bbeaf7add0f0e407677bc2f18fd39dd0497e2b3a60` | Historical neural comparator source. |
+| `itri-financial-time-series-imputation-5059f6010d6f660e1744e1bb2710b18f4dbb4999.zip` | `05a40072429dd1c709941a602f2293aeaf801591ff33c89e5ea1c462d240dcad` | Complete public ITRI/CFRI commit `5059f6010d6f660e1744e1bb2710b18f4dbb4999`, including the fold D notebook, original frozen protocol, external neural materials, and derived results. |
+| `CFRI_GitHub_candle_v1_exploratory.zip` | `7eeebfd15ef0b9dfce60207e208ba3e117a79e39d24a84b15d94540f4230a2e7` | Exploratory candle-coordinate source, notebook, results, and its own SHA manifest. |
 
-The historical ITRI baseline was copied from the local
-`github_itri_repo` working tree, excluding `.git`, generated Python caches
-and the old GitHub workflow. Its original README is preserved under
-`itri_baseline/README_original.md`.
+The merger adds `cfri_candle_v1_exploratory/` and the root `NUMBERING_MAP.md`, `.gitattributes`, this provenance note, and `SHA256SUMS.txt`. It updates root `README.md`, `CITATION.cff`, `.gitignore`, and `.github/workflows/verify-results.yml`; the workflow now checks the candle package. Three presentation files accidentally nested in `paper_figures/` (`README.md`, `CITATION.cff`, `.gitignore`) were removed in favor of the authoritative root files. Every other historical file and every candle file is byte-identical to its source archive.
 
-For convenience, the neural external-validation folder also carries exact
-copies of the classical package's asset-universe manifest, protocol and
-snapshot audit, which its historical README references.
+The public commit followed fold D data acquisition, as explained in `cfri_confirmatory/DEVIATIONS.md`. Publication of this combined package does not create a public pre-run timestamp for any historical study.
 
-`SHA256SUMS.txt` records all public files after packaging. The study archives
-retain their own receipts and source digests. This new bundle changes
-repository presentation only; it does not alter study outcomes or upgrade
-exploratory analyses into independent confirmation.
+After the initial merger, only root `README.md`, `NUMBERING_MAP.md`, and the workflow step labels were revised to match the CFRI-first manuscript draft: main Tables 1–2, no main figures, and Supplementary Tables S1–S28 and Figures S1–S7. The study code, protocols, notebooks, scores, receipts, and figures remain byte-identical to their input archives; the root SHA manifest was regenerated for these documentation changes.

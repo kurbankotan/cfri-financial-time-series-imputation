@@ -1,0 +1,2 @@
+# Preserve the executed candle CSV bytes, including CRLF line endings.
+cfri_candle_v1_exploratory/results/*.csv -text
