@@ -1,4 +1,4 @@
-name: Verify published results
+name: Verify CFRI manuscript evidence
 
 on:
   push:
@@ -21,26 +21,32 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - name: Install verification dependencies
+      - name: Install numerical verification dependencies
         run: python -m pip install numpy==2.1.3 pandas==2.2.3 scipy==1.16.3
 
-      - name: Historical ITRI development ablation
+      - name: Verify canonical file hashes and article figure assets
+        run: python scripts/verify_manifest.py
+
+      - name: Historical ITRI development archive
         run: python scripts/verify_published_results.py
 
-      - name: Historical development comparators (Supplementary Tables S8 and S9)
+      - name: Historical comparator archive
         run: python development_comparators/verify_comparator_numbers.py
 
-      - name: Historical external validation (Supplementary Tables S10 to S18)
+      - name: Historical ITRI external-validation archive
         run: python external_validation/code/verify_reported_numbers.py
 
-      - name: CFRI folds A to C and fold D (main Table 1)
+      - name: CFRI fold D main Table 1 and Supplementary Tables S1–S4
         run: python cfri_confirmatory/analysis/verify_reported_numbers.py
 
-      - name: CFRI fold D supplementary tables (Supplementary Tables S19 to S22)
+      - name: CFRI main Figure 2 and Supplementary Figure S1 source data
         run: python cfri_confirmatory/analysis/fold_D_supplement.py --out "$RUNNER_TEMP/supplement_fold_D"
 
-      - name: CFRI new-asset holdout (main Table 2, Supplementary Tables S23 to S25)
+      - name: CFRI main Table 2 and Supplementary Tables S5–S7
         run: python cfri_holdout_v1/analysis/verify_reported_numbers.py
 
-      - name: CFRI candle exploratory artifact integrity
+      - name: CFRI Figure 3 source data
+        run: python paper_figures/verify_cfri_figures.py
+
+      - name: CFRI exploratory Supplementary Tables S8–S10
         run: python cfri_candle_v1_exploratory/verify_package.py
