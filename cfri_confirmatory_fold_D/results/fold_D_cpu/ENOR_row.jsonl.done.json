@@ -1,1 +1,0 @@
-{"sha256": "bb3acf37a2ab95fe3ed9d08b6ecbdbc0afb2d5ce35227ac3352fc82cf8ec12a5", "code": "cfri-core-v2", "code_sha256": "c8ea4397f864fe8db9133c47e0983c7280df5522d73f5ef08824f166b5f7cf95", "conditions": 51, "errors": 0, "rows_by_partition": {"train": 2516, "val": 250, "test": 187}, "dropped_infeasible": [[20, 0.1, 11], [20, 0.1, 23], [20, 0.1, 37]]}
